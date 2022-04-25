@@ -42,8 +42,7 @@ chi5PNConv[et_, highestPow_] := Module[{e},
           289964795614986240000 - (
           91733330193268616658399616009 Log[13])/
           289964795614986240000)), {e, 0, highestPow}]] /. {e -> et}];
-fiveP5PNConv[et_,highestPower_]:=ExpandAll[Sum[(Series[((1-e^2)^5 (n/2)*g[n,e,highestPower],{e,0,highestPower}]/.{e->et}),{n,1,Ceiling[highestPower/2]+3}]],
-
+fiveP5PNConv[et_,highestPower_]:=ExpandAll[Sum[(Series[(1-e^2)^5 (n/2)*g[n,e,highestPower],{e,0,highestPower}]/.{e->et}),{n,1,Ceiling[highestPower/2]+3}]];
 SeriesData[p, Infinity, {-1 + e^2, 0, -2*(1 - e^2)^2, 0, 
   (9 - 5*e^2)*(1 - e^2)^2 + (1 - e^2)^(3/2)*(-14 + 9*e^2), 0, 
   (1 - e^2)^2*(28 - 8*e^2 - 4*e^4) + (1 - e^2)^(3/2)*
